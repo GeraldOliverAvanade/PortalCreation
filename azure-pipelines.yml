@@ -1,23 +1,10 @@
-# Node.js Express Web App to Linux on Azure
-# Build a Node.js Express app and deploy it to Azure as a Linux web app.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
-
 trigger:
 - master
 
 variables:
-
-  # Azure Resource Manager connection created during pipeline creation
   azureSubscription: '77bbf105-9a24-44c0-b096-97a3d7fcb528'
-
-  # Web app name
   webAppName: 'my-azure-app-gerald'
-
-  # Environment name
   environmentName: 'my-azure-app-gerald'
-
-  # Agent VM image name
   vmImageName: 'ubuntu-latest'
 
 stages:
@@ -40,6 +27,9 @@ stages:
         npm run build --if-present
         npm run test --if-present
       displayName: 'npm install, build and test'
+
+    - script: rm -rf node_modules
+      displayName: 'Remove node_modules before archiving'
 
     - task: ArchiveFiles@2
       displayName: 'Archive files'
@@ -73,6 +63,6 @@ stages:
               azureSubscription: $(azureSubscription)
               appType: webAppLinux
               appName: $(webAppName)
-              runtimeStack: 'NODE|20-LTS'
+              runtimeStack: 'NODE|20-lts'
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               startUpCommand: 'npm run start'
