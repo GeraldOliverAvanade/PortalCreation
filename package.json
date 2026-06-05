@@ -1,0 +1,22 @@
+{
+  "name": "my-azure-app",
+  "version": "1.0.0",
+  "description": "Full-stack Node.js app with Azure SQL, deployed to Azure App Service",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "@azure/identity": "^4.13.1",
+    "axios": "^1.17.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

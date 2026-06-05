@@ -1,0 +1,11 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}",
+        ".deployment",
+        "deploy.zip",
+        "env"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/c462ed70-033b-4be7-9f5e-c3de85ab6a99/resourceGroups/test-oliver-website/providers/Microsoft.Web/sites/my-azure-app-gerald",
+    "appService.deploySubpath": "."
+}
