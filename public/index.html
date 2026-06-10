@@ -1,33 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Azure App</title>
+  <title>α Platform サービス利用申請</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
+
   <header>
-    <h1>My Azure App Ghubssss</h1>
+    <span class="logo">avanade</span>
+    <span class="header-title">α Platform サービス利用申請</span>
   </header>
 
-  <main>
-    <section class="card">
-      <h2>Add Item</h2>
-      <form id="item-form">
-        <input type="text" id="item-name" placeholder="Name" required />
-        <input type="text" id="item-desc" placeholder="Description" />
-        <button type="submit">Add</button>
-      </form>
-      <p id="form-message"></p>
-    </section>
+  <div class="layout">
 
-    <section class="card">
-      <h2>Items</h2>
-      <button id="load-btn">Load Items</button>
-      <ul id="items-list"></ul>
-    </section>
-  </main>
+    <nav class="sidebar">
+      <p class="sidebar-section-label">Service</p>
+      <ul>
+        <li class="active">各種申請</li>
+        <li>申請一覧</li>
+        <li>プロジェクト一覧</li>
+        <li>お問い合わせ</li>
+      </ul>
+    </nav>
+
+    <main>
+      <h2 class="page-title">各種申請画面</h2>
+      <p class="page-subtitle">各種申請内容を選択し、申請完了後に、対応者が担当を開始します。</p>
+
+      <section class="service-section">
+        <h3 class="section-title">環境払い出しサービス</h3>
+        <div class="card-grid">
+
+          <div class="service-card">
+            <h4>アイテムを申請</h4>
+            <form id="item-form">
+              <input type="text" id="item-name" placeholder="名前" required />
+              <input type="text" id="item-desc" placeholder="説明" />
+              <p id="form-message"></p>
+              <button type="submit" class="apply-btn">申込する</button>
+            </form>
+          </div>
+
+          <div class="service-card">
+            <h4>Entra IDを申請する</h4>
+            <p class="card-desc">このサービスを利用してEntra IDの環境をリクエストする。</p>
+            <button id="load-btn" class="apply-btn">申込する</button>
+            <ul id="items-list"></ul>
+          </div>
+
+          <div class="service-card">
+            <h4>AWSを申請する</h4>
+            <p class="card-desc">このサービスを利用してAWSの環境をリクエストする。</p>
+            <button class="apply-btn">申込する</button>
+          </div>
+
+          <div class="service-card">
+            <h4>GCPを申請する</h4>
+            <button class="apply-btn">申込する</button>
+          </div>
+
+          <div class="service-card">
+            <h4>M365を申請する</h4>
+            <button class="apply-btn">申込する</button>
+          </div>
+
+        </div>
+      </section>
+    </main>
+
+  </div>
 
   <script src="js/app.js"></script>
 </body>
